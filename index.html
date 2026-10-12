@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tổ 1 · Mindset Lối sống & Ứng xử</title>
+<title>Tổ 1 · Tư tưởng sống hạnh phúc</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ===== NỀN ĐỘNG: cinematic spotlight + grain — ĐẬM ===== */
+  /* ===== NỀN ĐỘNG ===== */
   body::before {
     content:'';
     position:fixed; inset:0;
@@ -57,7 +57,6 @@
     100% { background-position:8% 4%, 92% 96%, 50% 50%, 0 0; }
   }
 
-  /* Vân giấy mịn — grain tĩnh */
   body::after {
     content:'';
     position:fixed; inset:0;
@@ -71,7 +70,6 @@
     opacity:.6;
   }
 
-  /* ===== HẠT SÁNG MỀM — xanh bạc đậm ===== */
   .ambient {
     position:fixed; inset:0;
     pointer-events:none;
@@ -93,7 +91,6 @@
     100% { transform:translateY(-15vh) scale(1); opacity:0; }
   }
 
-  /* ===== SPOTLIGHT DI CHUYỂN THEO CHUỘT ===== */
   .spotlight {
     position:fixed;
     width:700px; height:700px;
@@ -106,7 +103,6 @@
     will-change:left, top;
   }
 
-  /* ===== STAGE ===== */
   .stage {
     width:1200px; max-width:100%;
     aspect-ratio:16/9;
@@ -115,7 +111,6 @@
     z-index:2;
   }
 
-  /* Khung viền kép kiểu sách cổ */
   .book-frame {
     position:absolute;
     inset:-10px;
@@ -137,7 +132,6 @@
     border-color:rgba(90,107,130,.18);
   }
 
-  /* 4 góc trang trí */
   .corner {
     position:absolute;
     width:36px; height:36px;
@@ -176,7 +170,6 @@
       0 0 100px rgba(90,107,130,.08) inset;
   }
 
-  /* Lớp phủ vân sáng chéo */
   .slide-container::after {
     content:'';
     position:absolute; inset:0;
@@ -190,7 +183,6 @@
     100% { opacity:1; }
   }
 
-  /* ===== SLIDES ===== */
   .slides-wrapper {
     display:flex;
     width:100%; height:100%;
@@ -221,7 +213,6 @@
     filter:blur(4px);
   }
 
-  /* ===== DECORATION ===== */
   .deco {
     position:absolute; inset:0;
     pointer-events:none;
@@ -229,7 +220,6 @@
     z-index:0;
   }
 
-  /* CHIM */
   .bird { position:absolute; width:64px; height:44px; opacity:.55; will-change:transform; }
   .bird svg { width:100%; height:100%; }
   .bird path {
@@ -256,7 +246,6 @@
     100% { left:110%; top:26%; }
   }
 
-  /* LÁ */
   .leaf { position:absolute; width:22px; height:22px; opacity:.5; will-change:transform; }
   .leaf svg { width:100%; height:100%; }
   .leaf path { fill:#5a6b82; }
@@ -276,7 +265,6 @@
     100% { transform:translateY(115vh) rotate(-480deg) translateX(-70px); opacity:0; }
   }
 
-  /* SÓNG mực */
   .wave { position:absolute; bottom:0; left:0; width:200%; height:100px; opacity:.18; will-change:transform; }
   .wave svg { width:100%; height:100%; }
   .wave path { fill:#5a6b82; }
@@ -287,7 +275,6 @@
     100% { transform:translateX(-50%); }
   }
 
-  /* SAO NHỎ */
   .star {
     position:absolute; width:3px; height:3px;
     background:#8a9cb8; border-radius:50%;
@@ -346,7 +333,6 @@
     font-weight:400;
   }
 
-  /* Đường phân cách nhỏ */
   .ornament {
     display:flex;
     align-items:center;
@@ -712,7 +698,6 @@
     font-weight:300;
   }
 
-  /* Trang trí vòng tròn mở đầu */
   .welcome-deco {
     position:absolute;
     top:50%; left:50%;
@@ -841,7 +826,6 @@
     opacity:.8;
   }
 
-  /* Sao lấp lánh cho slide cuối */
   .twinkle-star {
     position:absolute;
     color:var(--gold-light);
@@ -892,7 +876,6 @@
     background:linear-gradient(-90deg, rgba(90,107,130,.07), transparent 45%);
   }
 
-  /* Pulse khi double-click */
   .click-zone.pulse::before {
     animation:zonePulse .6s ease;
     opacity:1;
@@ -902,7 +885,6 @@
     100% { transform:translateY(-50%) scale(1.6); opacity:0; box-shadow:0 0 0 0 rgba(138,156,184,0); }
   }
 
-  /* Hint */
   .hint {
     position:absolute;
     bottom:24px;
@@ -982,7 +964,6 @@
     box-shadow:0 0 20px rgba(138,156,184,.8);
   }
 
-  /* Toast thông báo */
   .toast {
     position:absolute;
     top:34px;
@@ -1057,9 +1038,7 @@
 </head>
 <body>
 
-<!-- SPOTLIGHT DI CHUYỂN THEO CHUỘT -->
 <div class="spotlight" id="spotlight"></div>
-
 <div class="ambient" id="ambient"></div>
 
 <div class="stage">
@@ -1072,15 +1051,12 @@
   <div class="slide-container" id="slideContainer">
     <div class="progress-bar" id="progressBar" style="width:20%"></div>
 
-    <!-- CLICK ZONES -->
     <div class="click-zone left"  id="zoneLeft"></div>
     <div class="click-zone right" id="zoneRight"></div>
 
-    <!-- TOASTS -->
     <div class="toast" id="toastLeft">← Slide trước</div>
     <div class="toast" id="toastRight">Slide tiếp theo →</div>
 
-    <!-- HINTS -->
     <div class="hint left" id="hintLeft">
       <span class="key">2×</span>
       <span>Click đúp để lùi</span>
@@ -1090,7 +1066,6 @@
       <span class="key">2×</span>
     </div>
 
-    <!-- SLIDES -->
     <div class="slides-wrapper" id="slidesWrapper">
 
       <!-- ============ SLIDE 1: WELCOME ============ -->
@@ -1113,12 +1088,12 @@
             <span class="diamond"></span>
             <span class="line"></span>
           </div>
-          <p class="subtitle">Hành trình khám phá bản thân</p>
-          <p class="topic">Mindset · Lối sống &amp; Ứng xử</p>
+          <p class="subtitle">Hành trình kiến tạo hạnh phúc</p>
+          <p class="topic">Tư tưởng · Sống hạnh phúc</p>
         </div>
       </div>
 
-      <!-- ============ SLIDE 2: LỐI SỐNG ============ -->
+      <!-- ============ SLIDE 2: BẢN CHẤT & TRỤ CỘT ============ -->
       <div class="slide" data-index="1">
         <div class="deco">
           <div class="bird bird1"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
@@ -1126,35 +1101,35 @@
           <div class="bird bird3"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
           <div class="bird bird4"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
         </div>
-        <div class="slide-tag">Phần một · Ứng xử với chính mình</div>
-        <h2>Mindset về <em>lối sống</em></h2>
+        <div class="slide-tag">Phần một · Bản chất &amp; trụ cột</div>
+        <h2>Hạnh phúc — <em>bản chất và trụ cột</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
-        <p class="content-text" style="max-width:82%">
-          Cách bạn sống và đối xử với bản thân là <strong>nền tảng</strong> cho mọi mối quan hệ xã hội bên ngoài.
+        <p class="content-text" style="max-width:85%">
+          Hạnh phúc là một <strong>trạng thái tinh thần viên mãn</strong>, thanh thản khi con người cảm thấy hài lòng với thực tại, được yêu thương và tìm thấy ý nghĩa trong cuộc sống.
         </p>
         <div class="card-grid">
           <div class="mind-card">
             <span class="num">I.</span>
-            <h3>Tư duy phát triển</h3>
-            <p>Xem mọi thất bại, biến cố hay sai lầm là cơ hội để học hỏi và nâng cấp bản thân, thay vì đổ lỗi cho hoàn cảnh.</p>
+            <h3>Không đồng nhất với vật chất</h3>
+            <p>Sự giàu sang và tiện nghi giúp cuộc sống dễ chịu hơn, nhưng không thể mua được sự bình yên nội tâm hay tình cảm chân thành.</p>
           </div>
           <div class="mind-card">
             <span class="num">II.</span>
-            <h3>Chủ nghĩa khắc kỷ</h3>
-            <p>Tập trung vào điều kiểm soát được: suy nghĩ, thái độ, hành động. Buông bỏ điều không kiểm soát để đạt bình yên.</p>
+            <h3>Đến từ những điều giản dị</h3>
+            <p>Hạnh phúc thường ẩn trong những khoảnh khắc đời thường: một bữa cơm gia đình, một lời hỏi thăm, hoặc một tâm hồn không vướng bận.</p>
           </div>
           <div class="mind-card">
             <span class="num">III.</span>
-            <h3>Sống tỉnh thức &amp; biết ơn</h3>
-            <p>Trân trọng những điều bình dị: sức khỏe, gia đình, sự an yên. Sống cho phút giây hiện tại.</p>
+            <h3>Mang tính chủ quan</h3>
+            <p>Mỗi người có một thước đo hạnh phúc riêng, phụ thuộc vào góc nhìn và cách họ đối diện với nghịch cảnh.</p>
           </div>
         </div>
         <div class="quote-block">
-          Sự thay đổi là quy luật tất yếu duy nhất của cuộc đời; việc chấp nhận và linh hoạt thích nghi giúp bạn không bị tụt hậu hay rơi vào khủng hoảng.
+          Hạnh phúc không phải là một đích đến cố định hay một phần thưởng trời cho, mà là một hành trình nhận thức và kiến tạo từ bên trong mỗi người.
         </div>
       </div>
 
-      <!-- ============ SLIDE 3: ĐỐI NHÂN XỬ THẾ ============ -->
+      <!-- ============ SLIDE 3: TRỤ CỘT & PHÊ PHÁN ============ -->
       <div class="slide" data-index="2">
         <div class="deco">
           <div class="leaf leaf1"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
@@ -1163,32 +1138,33 @@
           <div class="leaf leaf4"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
           <div class="leaf leaf5"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
         </div>
-        <div class="slide-tag">Phần hai · Đối nhân xử thế</div>
-        <h2>Mindset về cách <em>ứng xử với đời</em></h2>
+        <div class="slide-tag">Phần hai · Trụ cột &amp; phê phán</div>
+        <h2>Các trụ cột <em>của tư tưởng sống hạnh phúc</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
-        <p class="content-text" style="max-width:85%">
-          Ứng xử không chỉ là kỹ năng giao tiếp khéo léo, mà là sự phản chiếu trí tuệ và nhân cách của bạn ra thế giới bên ngoài.
-        </p>
         <ul class="mind-list">
           <li style="--i:1">
             <span class="bullet">i</span>
-            <span><strong>Tôn trọng sự khác biệt.</strong> Mỗi người có xuất phát điểm, văn hóa và tổn thương riêng. Hiểu bản chất vấn đề khách quan, tránh soi mói để duy trì hòa đồng.</span>
+            <span><strong>Biết đủ và trân trọng hiện tại.</strong> Hạnh phúc lớn nhất là khi thôi tiếc nuối quá khứ và không quá lo sợ tương lai; biết trân trọng những gì mình đang có thay vì mãi chạy theo những thứ ngoài tầm với.</span>
           </li>
           <li style="--i:2">
             <span class="bullet">ii</span>
-            <span><strong>Trí tuệ cảm xúc — Lắng nghe nhiều hơn nói.</strong> Đặt mình vào vị trí người khác (thấu cảm). Lắng nghe chân thành giúp hiểu nhu cầu ngầm, phản hồi chuẩn mực và thấu tình đạt lý.</span>
+            <span><strong>Chủ động thay đổi tư duy.</strong> Một thái độ lạc quan, hướng thiện và dám thấu hiểu bản thân sẽ biến những áp lực thành động lực.</span>
           </li>
           <li style="--i:3">
             <span class="bullet">iii</span>
-            <span><strong>Tử tế có nguyên tắc.</strong> Sống nhân ái, giúp đỡ người yếu thế. Nhưng tử tế phải đi kèm ranh giới cá nhân rõ ràng để bảo vệ bản thân, không biến mình thành kẻ nhu nhược.</span>
+            <span><strong>Biết sẻ chia và kết nối.</strong> Hạnh phúc không thể trọn vẹn nếu chỉ giữ cho riêng mình; việc cho đi yêu thương và sống có trách nhiệm với cộng đồng tạo ra giá trị bền vững.</span>
+          </li>
+          <li style="--i:4">
+            <span class="bullet">iv</span>
+            <span><strong>Sự bình an nội tâm.</strong> Theo triết lý phương Đông hay Phật giáo, hạnh phúc đến từ sự buông xả, chấp nhận tính vô thường và làm chủ cảm xúc thay vì bị cuốn theo tham vọng vật chất.</span>
           </li>
         </ul>
         <p class="content-text" style="margin-top:18px;font-size:.85rem;color:#6a7080;border-left:1px solid var(--gold);padding-left:16px;max-width:88%">
-          Theo cẩm nang từ Rabbit Care, bạn cần hiểu rõ bản chất vấn đề một cách khách quan, tránh phỏng đoán hay nghĩ xấu về người khác.
+          <strong style="color:var(--gold-light)">Phê phán quan niệm lệch lạc:</strong> Nô lệ cho công việc và thành tích — nhiều người đánh đổi sức khỏe, thời gian bên gia đình để chạy theo danh vọng rồi nhận lại sự trống rỗng. Hưởng thụ ích kỷ — quan niệm coi hạnh phúc là việc vơ vét lợi ích cá nhân sẽ chỉ tạo ra sự cô độc và lo âu.
         </p>
       </div>
 
-      <!-- ============ SLIDE 4: NGUYÊN TẮC VÀNG ============ -->
+      <!-- ============ SLIDE 4: LỢI ÍCH ============ -->
       <div class="slide" data-index="3">
         <div class="deco">
           <div class="wave wave1">
@@ -1207,34 +1183,34 @@
           <div class="star" style="top:35%;left:85%;animation-delay:1.5s"></div>
           <div class="star" style="top:20%;left:8%;animation-delay:2s"></div>
         </div>
-        <div class="slide-tag">Phần ba · Hành động hàng ngày</div>
-        <h2>Nguyên tắc vàng <em>trong hành động</em></h2>
+        <div class="slide-tag">Phần ba · Lợi ích của sống hạnh phúc</div>
+        <h2>Tác động <em>tích cực vượt trội</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
         <p class="content-text" style="max-width:82%">
-          Để chuyển hóa tư duy thành lối sống thực tế, bạn có thể áp dụng ba bộ lọc trước khi nói hoặc hành động:
+          Khi một người chủ động lựa chọn và nuôi dưỡng tư duy hạnh phúc, họ sẽ nhận được những lợi ích cốt lõi sau:
         </p>
         <div class="filter-grid">
           <div class="filter-item">
             <div class="number">01</div>
-            <h4>Sự thật</h4>
-            <p>Điều mình sắp nói hoặc làm có đúng sự thật không?</p>
+            <h4>Sức khỏe</h4>
+            <p>Tăng cường hệ miễn dịch, kéo dài tuổi thọ, giải tỏa áp lực tinh thần như một "màng lọc" tự nhiên.</p>
           </div>
           <div class="filter-item">
             <div class="number">02</div>
-            <h4>Sự tử tế</h4>
-            <p>Điều này có mang lại giá trị tốt đẹp hoặc xây dựng điều gì không?</p>
+            <h4>Sự nghiệp</h4>
+            <p>Kích thích tư duy sáng tạo, nâng cao hiệu suất làm việc, xây dựng bản lĩnh kiên cường trước thất bại.</p>
           </div>
           <div class="filter-item">
             <div class="number">03</div>
-            <h4>Sự cần thiết</h4>
-            <p>Nó có thực sự cần thiết phải nói hoặc làm vào lúc này không?</p>
+            <h4>Xã hội</h4>
+            <p>Lan tỏa năng lượng tích cực, giảm thiểu xung đột, đóng góp cho cộng đồng nhân văn hơn.</p>
           </div>
         </div>
         <div class="quote-block">
-          Cách mọi người đối xử với bạn là vận mệnh của họ, cách bạn đối xử với họ là nghiệp quả của bạn.
+          Người hạnh phúc giống như một thỏi nam châm hút những điều tốt đẹp; họ dễ dàng thấu hiểu, bao dung và xây dựng mối quan hệ hòa nhã với gia đình, đồng nghiệp.
         </div>
         <p class="content-text" style="margin-top:14px;font-size:.92rem;max-width:88%">
-          Khi bạn giữ được một cái tâm trong sáng, một tư duy rộng mở và một lối sống văn minh, bạn tự khắc sẽ thu hút những điều tích cực và tạo dựng được những mối quan hệ bền vững.
+          Khi nội tâm bình an, con người sẽ ít có xu hướng giận dữ, tỵ hiềm hay tranh chấp với người khác, giúp môi trường sống và làm việc trở nên lành mạnh hơn.
         </p>
       </div>
 
@@ -1267,7 +1243,6 @@
 
     </div>
 
-    <!-- DOTS -->
     <div class="nav-dots" id="navDots">
       <div class="dot active" data-index="0"></div>
       <div class="dot" data-index="1"></div>
@@ -1280,7 +1255,7 @@
 
 <script>
 /* ============================================================
-   AMBIENT PARTICLES — hạt xanh bạc đậm
+   AMBIENT PARTICLES
    ============================================================ */
 (function createAmbient(){
   const box = document.getElementById('ambient');
@@ -1302,7 +1277,7 @@
 })();
 
 /* ============================================================
-   SPOTLIGHT THEO CHUỘT — parallax tinh tế
+   SPOTLIGHT THEO CHUỘT
    ============================================================ */
 (function spotlightFollow(){
   const spotlight = document.getElementById('spotlight');
@@ -1327,7 +1302,7 @@
 })();
 
 /* ============================================================
-   SLIDE NAVIGATION — DOUBLE CLICK, DOTS, KEYBOARD, SWIPE
+   SLIDE NAVIGATION
    ============================================================ */
 (function slideNav(){
   const wrapper    = document.getElementById('slidesWrapper');
