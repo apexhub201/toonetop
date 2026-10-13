@@ -8,9 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
 <style>
-  /* ============================================================
-     RESET & ROOT
-     ============================================================ */
   * { margin:0; padding:0; box-sizing:border-box; }
 
   :root {
@@ -40,7 +37,6 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ===== NỀN ĐỘNG ===== */
   body::before {
     content:'';
     position:fixed; inset:0;
@@ -104,7 +100,7 @@
   }
 
   .stage {
-    width:1200px; max-width:100%;
+    width:1280px; max-width:100%;
     aspect-ratio:16/9;
     perspective:2600px;
     position:relative;
@@ -191,7 +187,7 @@
   }
   .slide {
     min-width:100%; height:100%;
-    padding:56px 68px 84px;
+    padding:48px 64px 76px;
     position:relative;
     opacity:0;
     transform:translateZ(-160px) rotateY(16deg) scale(.97);
@@ -201,6 +197,7 @@
     flex-direction:column;
     filter:blur(4px);
     will-change:transform, opacity, filter;
+    overflow:hidden;
   }
   .slide.active {
     opacity:1;
@@ -290,9 +287,9 @@
   /* ===== TYPOGRAPHY ===== */
   .slide-tag {
     font-family:'Inter',sans-serif;
-    font-size:.72rem; letter-spacing:3.5px; text-transform:uppercase;
+    font-size:.7rem; letter-spacing:3.5px; text-transform:uppercase;
     color:var(--gold-light); font-weight:500;
-    margin-bottom:16px;
+    margin-bottom:14px;
     display:flex; align-items:center; gap:14px;
     position:relative; z-index:3;
   }
@@ -309,9 +306,9 @@
 
   h1 {
     font-family:'Cormorant Garamond', serif;
-    font-size:3.6rem; font-weight:500; line-height:1.1;
+    font-size:3.4rem; font-weight:500; line-height:1.1;
     color:var(--paper);
-    margin-bottom:20px; letter-spacing:-.01em;
+    margin-bottom:18px; letter-spacing:-.01em;
     position:relative; z-index:3;
   }
   h1 em {
@@ -322,8 +319,8 @@
 
   h2 {
     font-family:'Cormorant Garamond', serif;
-    font-size:2.4rem; font-weight:500; color:var(--paper);
-    margin-bottom:18px; line-height:1.25;
+    font-size:2.2rem; font-weight:500; color:var(--paper);
+    margin-bottom:16px; line-height:1.25;
     position:relative; z-index:3;
     letter-spacing:-.005em;
   }
@@ -337,7 +334,7 @@
     display:flex;
     align-items:center;
     gap:12px;
-    margin-bottom:22px;
+    margin-bottom:20px;
     position:relative; z-index:3;
   }
   .ornament .line {
@@ -354,8 +351,8 @@
 
   .content-text {
     font-family:'Inter',sans-serif;
-    color:var(--text-body); font-size:1rem; line-height:1.75;
-    max-width:90%; position:relative; z-index:3;
+    color:var(--text-body); font-size:.95rem; line-height:1.7;
+    max-width:92%; position:relative; z-index:3;
     font-weight:300;
     letter-spacing:.005em;
   }
@@ -363,16 +360,16 @@
 
   /* ===== CARDS ===== */
   .card-grid {
-    display:flex; gap:16px; margin-top:26px; flex-wrap:wrap;
+    display:flex; gap:16px; margin-top:22px; flex-wrap:wrap;
     position:relative; z-index:3;
     perspective:1000px;
   }
   .mind-card {
-    flex:1 1 180px;
+    flex:1 1 200px;
     background:rgba(220,223,230,.025);
     border:1px solid rgba(90,107,130,.2);
     border-radius:4px;
-    padding:24px 20px;
+    padding:22px 20px;
     transition:all .45s cubic-bezier(.2,.9,.3,1);
     animation:cardAppear .9s cubic-bezier(.2,.9,.3,1) both;
     position:relative;
@@ -411,37 +408,38 @@
   }
   .mind-card .num {
     font-family:'Cormorant Garamond', serif;
-    font-size:1.5rem;
+    font-size:1.4rem;
     color:var(--gold);
     font-style:italic;
-    margin-bottom:10px;
+    margin-bottom:8px;
     display:block;
     opacity:.85;
   }
   .mind-card h3 {
     font-family:'Cormorant Garamond', serif;
     color:var(--paper);
-    font-size:1.3rem;
+    font-size:1.2rem;
     font-weight:600;
     margin-bottom:8px;
     letter-spacing:.005em;
+    line-height:1.25;
   }
   .mind-card p {
     color:#8a92a4;
-    font-size:.86rem;
+    font-size:.84rem;
     line-height:1.6;
     font-weight:300;
   }
 
   /* ===== LIST ===== */
   .mind-list {
-    list-style:none; margin-top:18px;
-    display:flex; flex-direction:column; gap:18px;
+    list-style:none; margin-top:16px;
+    display:flex; flex-direction:column; gap:14px;
     position:relative; z-index:3;
   }
   .mind-list li {
-    display:flex; align-items:flex-start; gap:16px;
-    color:var(--text-body); font-size:.95rem; line-height:1.65;
+    display:flex; align-items:flex-start; gap:14px;
+    color:var(--text-body); font-size:.9rem; line-height:1.62;
     animation:fadeUp .7s ease both;
     animation-delay:calc(.15s * var(--i,1));
     font-weight:300;
@@ -452,12 +450,12 @@
     color:#d0d4dc;
   }
   .mind-list li .bullet {
-    flex:0 0 24px; height:24px;
+    flex:0 0 22px; height:22px;
     border:1px solid var(--gold);
     border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-family:'Cormorant Garamond', serif;
-    font-size:.8rem; font-weight:600;
+    font-size:.75rem; font-weight:600;
     color:var(--gold-light);
     margin-top:2px;
     opacity:.85;
@@ -473,21 +471,21 @@
     color:#d0d4dc;
     font-weight:500;
     font-family:'Cormorant Garamond', serif;
-    font-size:1.15rem;
+    font-size:1.1rem;
   }
   @keyframes fadeUp{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:translateY(0)}}
 
   /* ===== QUOTE ===== */
   .quote-block {
-    margin-top:26px;
-    padding:22px 28px 22px 32px;
+    margin-top:22px;
+    padding:18px 26px 18px 30px;
     border-left:2px solid var(--gold);
     background:linear-gradient(90deg, rgba(90,107,130,.08), transparent 70%);
     font-family:'Cormorant Garamond', serif;
     font-style:italic;
-    font-size:1.2rem;
+    font-size:1.1rem;
     color:#d0d4dc;
-    line-height:1.55;
+    line-height:1.5;
     position:relative; z-index:3;
     font-weight:400;
     animation:quoteReveal 1.2s cubic-bezier(.2,.9,.3,1) both;
@@ -501,7 +499,7 @@
     content:'“';
     position:absolute;
     left:8px; top:-6px;
-    font-size:2.6rem;
+    font-size:2.4rem;
     color:var(--gold);
     opacity:.5;
     font-family:'Cormorant Garamond', serif;
@@ -509,29 +507,29 @@
   }
   .quote-block .author {
     display:block;
-    margin-top:10px;
+    margin-top:8px;
     font-family:'Inter',sans-serif;
     font-style:normal;
-    font-size:.78rem;
+    font-size:.75rem;
     color:var(--text-muted);
     letter-spacing:1.5px;
     text-transform:uppercase;
     font-weight:400;
   }
 
-  /* ===== FILTER ===== */
+  /* ===== FILTER / BENEFIT CARDS ===== */
   .filter-grid {
-    display:flex; gap:16px; margin-top:24px; flex-wrap:wrap;
+    display:flex; gap:18px; margin-top:20px; flex-wrap:wrap;
     position:relative; z-index:3;
     perspective:1000px;
   }
   .filter-item {
-    flex:1 1 150px;
+    flex:1 1 220px;
     background:rgba(220,223,230,.02);
     border:1px solid rgba(90,107,130,.22);
     border-radius:4px;
-    padding:22px 18px;
-    text-align:center;
+    padding:20px 20px;
+    text-align:left;
     transition:all .4s cubic-bezier(.2,.9,.3,1);
     animation:popIn .8s cubic-bezier(.2,.9,.3,1) both;
     position:relative;
@@ -556,31 +554,38 @@
   @keyframes popIn{0%{opacity:0;transform:scale(.85)}100%{opacity:1;transform:scale(1)}}
   .filter-item .number {
     font-family:'Cormorant Garamond', serif;
-    font-size:2rem;
+    font-size:1.6rem;
     font-weight:500;
     font-style:italic;
     color:var(--gold);
     line-height:1;
-    margin-bottom:10px;
+    margin-bottom:8px;
     opacity:.8;
   }
   .filter-item h4 {
     font-family:'Cormorant Garamond', serif;
     color:var(--paper);
-    font-size:1.25rem;
+    font-size:1.15rem;
     font-weight:600;
-    margin-bottom:8px;
+    margin-bottom:10px;
+    line-height:1.25;
   }
   .filter-item p {
     color:#8a92a4;
-    font-size:.83rem;
-    line-height:1.55;
+    font-size:.82rem;
+    line-height:1.6;
     font-weight:300;
+    margin-bottom:6px;
+  }
+  .filter-item p:last-child { margin-bottom:0; }
+  .filter-item p strong {
+    color:#b8c0d0;
+    font-weight:500;
   }
   .filter-item:hover {
     background:rgba(90,107,130,.07);
     border-color:rgba(90,107,130,.5);
-    transform:translateY(-5px) rotateX(3deg) scale(1.02);
+    transform:translateY(-5px) rotateX(2deg) scale(1.01);
     box-shadow:0 20px 35px -15px rgba(0,0,0,.8), 0 0 25px -10px rgba(90,107,130,.3);
   }
 
@@ -611,7 +616,7 @@
 
   .welcome-slide .big-title {
     font-family:'Cormorant Garamond', serif;
-    font-size:6.5rem;
+    font-size:6rem;
     font-weight:500;
     font-style:italic;
     line-height:1;
@@ -756,7 +761,7 @@
   }
   .thanks-slide .thanks-title {
     font-family:'Cormorant Garamond', serif;
-    font-size:5.2rem;
+    font-size:5rem;
     font-weight:500;
     font-style:italic;
     line-height:1.05;
@@ -887,8 +892,8 @@
 
   .hint {
     position:absolute;
-    bottom:24px;
-    font-size:.62rem;
+    bottom:22px;
+    font-size:.6rem;
     color:rgba(138,156,184,.4);
     letter-spacing:2.5px;
     z-index:35;
@@ -922,9 +927,9 @@
      DOTS & PROGRESS
      ============================================================ */
   .nav-dots {
-    position:absolute; bottom:26px; left:50%;
+    position:absolute; bottom:24px; left:50%;
     transform:translateX(-50%);
-    display:flex; gap:14px; z-index:50;
+    display:flex; gap:12px; z-index:50;
   }
   .dot {
     width:6px; height:6px;
@@ -1008,31 +1013,48 @@
   /* ============================================================
      RESPONSIVE
      ============================================================ */
+  @media (max-width:1200px){
+    .slide{padding:42px 56px 72px}
+    h1{font-size:3rem} h2{font-size:2rem}
+    .welcome-slide .big-title{font-size:5.2rem}
+    .thanks-slide .thanks-title{font-size:4.4rem}
+  }
   @media (max-width:1024px){
-    .slide{padding:40px 44px 76px}
-    h1{font-size:2.8rem} h2{font-size:2rem}
-    .welcome-slide .big-title{font-size:5rem}
-    .thanks-slide .thanks-title{font-size:4rem}
+    .slide{padding:36px 40px 70px}
+    h1{font-size:2.6rem} h2{font-size:1.85rem}
+    .welcome-slide .big-title{font-size:4.4rem}
+    .thanks-slide .thanks-title{font-size:3.6rem}
     .spotlight{display:none}
+    .filter-item{padding:16px 16px}
+    .filter-item p{font-size:.78rem}
   }
   @media (max-width:768px){
-    body{padding:10px}
-    .slide{padding:28px 24px 76px}
-    h1{font-size:2rem} h2{font-size:1.55rem}
-    .welcome-slide .big-title{font-size:3.4rem}
-    .welcome-slide .subtitle{font-size:1.1rem}
-    .thanks-slide .thanks-title{font-size:2.8rem}
-    .content-text{font-size:.88rem}
-    .mind-card{padding:18px 14px}
-    .mind-card h3{font-size:1.1rem}
-    .quote-block{font-size:1rem;padding:16px 20px 16px 26px}
+    body{padding:8px}
+    .slide{padding:24px 22px 70px}
+    h1{font-size:1.9rem} h2{font-size:1.4rem}
+    .welcome-slide .big-title{font-size:2.9rem}
+    .welcome-slide .subtitle{font-size:1.05rem}
+    .thanks-slide .thanks-title{font-size:2.4rem}
+    .content-text{font-size:.82rem}
+    .mind-card{padding:14px 12px}
+    .mind-card h3{font-size:1rem}
+    .mind-card p{font-size:.75rem}
+    .filter-item{padding:14px 12px}
+    .filter-item h4{font-size:1rem}
+    .filter-item p{font-size:.72rem}
+    .mind-list li{font-size:.8rem; gap:10px}
+    .mind-list li strong{font-size:.95rem}
+    .mind-list li .bullet{flex:0 0 20px; height:20px; font-size:.7rem}
+    .quote-block{font-size:.9rem;padding:14px 18px 14px 24px}
     .bird{width:46px;height:32px}
     .leaf{width:18px;height:18px}
-    .hint{font-size:.55rem;bottom:16px;letter-spacing:1.5px}
-    .hint.left{left:16px} .hint.right{right:16px}
-    .welcome-deco{width:320px;height:320px}
+    .hint{font-size:.5rem;bottom:14px;letter-spacing:1.2px}
+    .hint.left{left:14px} .hint.right{right:14px}
+    .welcome-deco{width:300px;height:300px}
     .corner{width:22px;height:22px}
     .spotlight{display:none}
+    .nav-dots{gap:9px; bottom:18px}
+    .dot{width:5px;height:5px}
   }
 </style>
 </head>
@@ -1049,7 +1071,7 @@
   <div class="corner br"></div>
 
   <div class="slide-container" id="slideContainer">
-    <div class="progress-bar" id="progressBar" style="width:20%"></div>
+    <div class="progress-bar" id="progressBar" style="width:14.28%"></div>
 
     <div class="click-zone left"  id="zoneLeft"></div>
     <div class="click-zone right" id="zoneRight"></div>
@@ -1104,10 +1126,10 @@
         <div class="slide-tag">Phần một · Bản chất của hạnh phúc</div>
         <h2>Hạnh phúc — <em>bản chất và nhận thức</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
-        <p class="content-text" style="max-width:85%">
+        <p class="content-text" style="max-width:92%">
           Hạnh phúc là một <strong>trạng thái tinh thần viên mãn, thanh thản</strong> khi con người cảm thấy hài lòng với thực tại, được yêu thương và tìm thấy ý nghĩa trong cuộc sống.
         </p>
-        <p class="content-text" style="margin-top:14px;max-width:88%">
+        <p class="content-text" style="margin-top:12px;max-width:92%">
           Tư tưởng sống hạnh phúc không phải là một đích đến cố định hay một phần thưởng trời cho, mà là một <strong>hành trình nhận thức và kiến tạo từ bên trong mỗi người</strong>.
         </p>
         <div class="card-grid">
@@ -1132,7 +1154,7 @@
         </div>
       </div>
 
-      <!-- ============ SLIDE 3: TRỤ CỘT & PHÊ PHÁN ============ -->
+      <!-- ============ SLIDE 3: TRỤ CỘT ============ -->
       <div class="slide" data-index="2">
         <div class="deco">
           <div class="leaf leaf1"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
@@ -1141,7 +1163,7 @@
           <div class="leaf leaf4"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
           <div class="leaf leaf5"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
         </div>
-        <div class="slide-tag">Phần hai · Trụ cột &amp; phê phán</div>
+        <div class="slide-tag">Phần hai · Các trụ cột</div>
         <h2>Các trụ cột <em>của tư tưởng sống hạnh phúc</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
         <ul class="mind-list">
@@ -1162,12 +1184,9 @@
             <span><strong>Sự bình an nội tâm.</strong> Theo triết lý phương Đông hay Phật giáo, hạnh phúc đến từ sự buông xả, chấp nhận tính vô thường và làm chủ cảm xúc thay vì bị cuốn theo tham vọng vật chất.</span>
           </li>
         </ul>
-        <p class="content-text" style="margin-top:18px;font-size:.85rem;color:#6a7080;border-left:1px solid var(--gold);padding-left:16px;max-width:88%">
-          <strong style="color:var(--gold-light)">Phê phán những quan niệm lệch lạc:</strong> Nô lệ cho công việc và thành tích — nhiều người đánh đổi sức khỏe, thời gian bên gia đình để chạy theo danh vọng rồi nhận lại sự trống rỗng. Hưởng thụ ích kỷ — quan niệm coi hạnh phúc là việc vơ vét lợi ích cá nhân sẽ chỉ tạo ra sự cô độc và lo âu.
-        </p>
       </div>
 
-      <!-- ============ SLIDE 4: LỢI ÍCH ============ -->
+      <!-- ============ SLIDE 4: PHÊ PHÁN ============ -->
       <div class="slide" data-index="3">
         <div class="deco">
           <div class="wave wave1">
@@ -1186,33 +1205,89 @@
           <div class="star" style="top:35%;left:85%;animation-delay:1.5s"></div>
           <div class="star" style="top:20%;left:8%;animation-delay:2s"></div>
         </div>
-        <div class="slide-tag">Phần ba · Lợi ích của sống hạnh phúc</div>
-        <h2>Tác động <em>tích cực vượt trội</em></h2>
+        <div class="slide-tag">Phần ba · Phê phán</div>
+        <h2>Phê phán <em>những quan niệm lệch lạc</em></h2>
         <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
-        <p class="content-text" style="max-width:82%">
-          Tư tưởng sống hạnh phúc không chỉ mang lại sự bình yên trong tâm hồn mà còn tạo ra những tác động tích cực vượt trội đến sức khỏe, sự nghiệp và các mối quan hệ xã hội. Khi một người chủ động lựa chọn và nuôi dưỡng tư duy hạnh phúc, họ sẽ nhận được những lợi ích cốt lõi sau:
+        <p class="content-text" style="max-width:92%">
+          Bên cạnh những giá trị đúng đắn, vẫn tồn tại nhiều quan niệm sai lầm về hạnh phúc khiến con người ngày càng xa rời sự bình yên thật sự.
+        </p>
+        <div class="card-grid" style="margin-top:24px">
+          <div class="mind-card">
+            <span class="num">I.</span>
+            <h3>Nô lệ cho công việc và thành tích</h3>
+            <p>Nhiều người đánh đổi sức khỏe, thời gian bên gia đình để chạy theo danh vọng rồi nhận lại sự trống rỗng. Họ lầm tưởng rằng thành công bên ngoài sẽ lấp đầy khoảng trống bên trong, nhưng càng đạt được nhiều, họ càng cảm thấy cô đơn và mất phương hướng.</p>
+          </div>
+          <div class="mind-card">
+            <span class="num">II.</span>
+            <h3>Hưởng thụ ích kỷ</h3>
+            <p>Quan niệm coi hạnh phúc là việc vơ vét lợi ích cá nhân sẽ chỉ tạo ra sự cô độc và lo âu. Khi con người chỉ biết đến bản thân, họ dần đánh mất khả năng kết nối, sẻ chia và cảm nhận những giá trị tinh thần bền vững.</p>
+          </div>
+        </div>
+        <div class="quote-block">
+          Đừng đánh đổi sức khỏe, thời gian bên gia đình để chạy theo danh vọng rồi nhận lại sự trống rỗng. Hạnh phúc đích thực không nằm ở việc vơ vét lợi ích cá nhân.
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 5: LỢI ÍCH SỨC KHỎE ============ -->
+      <div class="slide" data-index="4">
+        <div class="deco">
+          <div class="bird bird1"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
+          <div class="bird bird2"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
+          <div class="bird bird3"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
+          <div class="star" style="top:18%;left:14%;animation-delay:.3s"></div>
+          <div class="star" style="top:30%;left:82%;animation-delay:1.2s"></div>
+          <div class="star" style="top:70%;left:22%;animation-delay:2.1s"></div>
+        </div>
+        <div class="slide-tag">Phần bốn · Lợi ích — Sức khỏe</div>
+        <h2>Tác động <em>đối với sức khỏe</em></h2>
+        <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
+        <p class="content-text" style="max-width:92%">
+          Tư tưởng sống hạnh phúc không chỉ mang lại sự bình yên trong tâm hồn mà còn tạo ra những tác động tích cực vượt trội đến sức khỏe thể chất và tinh thần của mỗi người.
         </p>
         <div class="filter-grid">
           <div class="filter-item">
             <div class="number">01</div>
-            <h4>Sức khỏe thể chất &amp; tinh thần</h4>
-            <p><strong>Tăng cường hệ miễn dịch:</strong> Lối sống lạc quan và hạnh phúc giúp cơ thể sản sinh nhiều hormone có lợi như endorphin và oxytocin, làm giảm nồng độ cortisol (hormone gây căng thẳng), giúp cơ thể phòng chống bệnh tật tốt hơn.</p>
-            <p style="margin-top:8px"><strong>Kéo dài tuổi thọ:</strong> Nhiều nghiên cứu y khoa chứng minh những người có tinh thần vui vẻ, an yên thường ít có nguy cơ mắc các bệnh về tim mạch, đột quỵ và có tuổi thọ cao hơn.</p>
-            <p style="margin-top:8px"><strong>Giải tỏa áp lực tinh thần:</strong> Tư tưởng này hoạt động như một "màng lọc" tự nhiên, giúp con người dễ dàng vượt qua các trạng thái tâm lý tiêu cực như trầm cảm, lo âu hay stress kéo dài.</p>
+            <h4>Tăng cường hệ miễn dịch</h4>
+            <p>Lối sống lạc quan và hạnh phúc giúp cơ thể sản sinh nhiều hormone có lợi như <strong>endorphin</strong> và <strong>oxytocin</strong>, làm giảm nồng độ <strong>cortisol</strong> (hormone gây căng thẳng), giúp cơ thể phòng chống bệnh tật tốt hơn.</p>
           </div>
           <div class="filter-item">
             <div class="number">02</div>
-            <h4>Phát triển cá nhân &amp; sự nghiệp</h4>
-            <p><strong>Kích thích tư duy sáng tạo:</strong> Một tâm trí thoải mái, không bị đè nặng bởi áp lực sẽ có không gian để tư duy đột phá, tìm ra nhiều giải pháp thông minh trong công việc.</p>
-            <p style="margin-top:8px"><strong>Nâng cao hiệu suất làm việc:</strong> Người sống hạnh phúc thường đi làm với nguồn năng lượng dồi dào, có động lực nội tại mạnh mẽ và dễ dàng đạt được thành công bền vững hơn.</p>
-            <p style="margin-top:8px"><strong>Xây dựng bản lĩnh kiên cường:</strong> Khi đối mặt với thất bại, tư tưởng sống hạnh phúc giúp con người nhìn nhận nghịch cảnh như một bài học thay vì một bi kịch, từ đó nhanh chóng đứng dậy và bước tiếp.</p>
+            <h4>Kéo dài tuổi thọ</h4>
+            <p>Nhiều nghiên cứu y khoa chứng minh những người có tinh thần vui vẻ, an yên thường ít có nguy cơ mắc các bệnh về <strong>tim mạch, đột quỵ</strong> và có tuổi thọ cao hơn.</p>
           </div>
           <div class="filter-item">
             <div class="number">03</div>
+            <h4>Giải tỏa áp lực tinh thần</h4>
+            <p>Tư tưởng này hoạt động như một <strong>"màng lọc" tự nhiên</strong>, giúp con người dễ dàng vượt qua các trạng thái tâm lý tiêu cực như trầm cảm, lo âu hay stress kéo dài.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 6: LỢI ÍCH SỰ NGHIỆP & XÃ HỘI ============ -->
+      <div class="slide" data-index="5">
+        <div class="deco">
+          <div class="leaf leaf1"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
+          <div class="leaf leaf2"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
+          <div class="leaf leaf3"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
+          <div class="leaf leaf4"><svg viewBox="0 0 30 30"><path d="M15,2 C20,8 28,14 15,28 C2,14 10,8 15,2 Z"/></svg></div>
+        </div>
+        <div class="slide-tag">Phần năm · Lợi ích — Sự nghiệp &amp; Xã hội</div>
+        <h2>Tác động <em>đối với sự nghiệp và xã hội</em></h2>
+        <div class="ornament"><span class="line"></span><span class="diamond"></span></div>
+        <div class="filter-grid" style="margin-top:14px">
+          <div class="filter-item">
+            <div class="number">01</div>
+            <h4>Phát triển cá nhân &amp; sự nghiệp</h4>
+            <p><strong>Kích thích tư duy sáng tạo:</strong> Một tâm trí thoải mái, không bị đè nặng bởi áp lực sẽ có không gian để tư duy đột phá, tìm ra nhiều giải pháp thông minh trong công việc.</p>
+            <p><strong>Nâng cao hiệu suất làm việc:</strong> Người sống hạnh phúc thường đi làm với nguồn năng lượng dồi dào, có động lực nội tại mạnh mẽ và dễ dàng đạt được thành công bền vững hơn.</p>
+            <p><strong>Xây dựng bản lĩnh kiên cường:</strong> Khi đối mặt với thất bại, tư tưởng sống hạnh phúc giúp con người nhìn nhận nghịch cảnh như một bài học thay vì một bi kịch, từ đó nhanh chóng đứng dậy và bước tiếp.</p>
+          </div>
+          <div class="filter-item">
+            <div class="number">02</div>
             <h4>Các mối quan hệ &amp; xã hội</h4>
             <p><strong>Lan tỏa năng lượng tích cực:</strong> Người hạnh phúc giống như một thỏi nam châm hút những điều tốt đẹp; họ dễ dàng thấu hiểu, bao dung và xây dựng mối quan hệ hòa nhã với gia đình, đồng nghiệp.</p>
-            <p style="margin-top:8px"><strong>Giảm thiểu xung đột:</strong> Khi nội tâm bình an, con người sẽ ít có xu hướng giận dữ, tỵ hiềm hay tranh chấp với người khác, giúp môi trường sống và làm việc trở nên lành mạnh hơn.</p>
-            <p style="margin-top:8px"><strong>Đóng góp cho cộng đồng:</strong> Người có cuộc sống hạnh phúc thường có xu hướng làm việc thiện nguyện, sẵn sàng chia sẻ và giúp đỡ những hoàn cảnh khó khăn, từ đó thúc đẩy xã hội phát triển nhân văn hơn.</p>
+            <p><strong>Giảm thiểu xung đột:</strong> Khi nội tâm bình an, con người sẽ ít có xu hướng giận dữ, tỵ hiềm hay tranh chấp với người khác, giúp môi trường sống và làm việc trở nên lành mạnh hơn.</p>
+            <p><strong>Đóng góp cho cộng đồng:</strong> Người có cuộc sống hạnh phúc thường có xu hướng làm việc thiện nguyện, sẵn sàng chia sẻ và giúp đỡ những hoàn cảnh khó khăn, từ đó thúc đẩy xã hội phát triển nhân văn hơn.</p>
           </div>
         </div>
         <div class="quote-block">
@@ -1220,8 +1295,8 @@
         </div>
       </div>
 
-      <!-- ============ SLIDE 5: THANK YOU ============ -->
-      <div class="slide thanks-slide" data-index="4">
+      <!-- ============ SLIDE 7: THANK YOU ============ -->
+      <div class="slide thanks-slide" data-index="6">
         <div class="deco">
           <div class="bird bird1"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
           <div class="bird bird2"><svg viewBox="0 0 80 50"><path d="M10,25 Q25,5 40,25 Q55,5 70,25"/></svg></div>
@@ -1255,6 +1330,8 @@
       <div class="dot" data-index="2"></div>
       <div class="dot" data-index="3"></div>
       <div class="dot" data-index="4"></div>
+      <div class="dot" data-index="5"></div>
+      <div class="dot" data-index="6"></div>
     </div>
   </div>
 </div>
